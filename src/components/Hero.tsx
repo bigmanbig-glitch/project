@@ -64,7 +64,7 @@ export function Hero() {
         <div className="animate-fade-up mt-12 grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-saffron-500/15 bg-saffron-500/10 sm:grid-cols-4 sm:mt-14 [animation-delay:0.4s]">
           {STATS.map((s) => (
             <div key={s.label} className="bg-espresso-900/80 px-3 py-3 text-center backdrop-blur sm:px-4 sm:py-4">
-             <p className="font-serif text-2xl text-saffron-300 sm:text-4xl">{s.value}</p>
+             <p className="font-serif text-2xl text-white sm:text-4xl">{s.value}</p>
               <p className="mt-1 text-[10px] uppercase tracking-widest text-cream-400 sm:text-[11px]">{s.label}</p>
             </div>
           ))}
