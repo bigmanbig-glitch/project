@@ -29,7 +29,7 @@ export function Heritage() {
 
   return (
     <section id="heritage" ref={ref} className="relative overflow-hidden pt-16 pb-6 sm:pt-22 sm:pb-8">
-      <div className="absolute inset-0 bg-gradient-to-b from-espresso-950 to-espresso-900" />
+     <div className="absolute inset-0 bg-gradient-to-b from-espresso-900 to-espresso-800 sm:from-espresso-950 sm:to-espresso-900" />
       <div className="persian-pattern absolute inset-0 opacity-30" />
 
       <div className="relative mx-auto max-w-8xl px-5 sm:px-8">
@@ -50,12 +50,12 @@ export function Heritage() {
           {PILLARS.map((p, i) => (
             <article
               key={p.title}
-              className={`reveal ${isVisible ? 'is-visible' : ''} group relative overflow-hidden rounded-2xl border border-saffron-500/15 bg-espresso-800/50 p-5 transition-all duration-500 hover:border-saffron-400/40 hover:bg-espresso-700/40`}
+        className={`reveal ${isVisible ? 'is-visible' : ''} group relative overflow-hidden rounded-2xl border border-saffron-500/15 bg-cream-50/10 sm:bg-espresso-800/50 p-5 transition-all duration-500 hover:border-saffron-400/40 hover:bg-espresso-700/40`}
               style={{ transitionDelay: `${i * 90}ms` }}
             >
               <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-saffron-500/5 blur-2xl transition-opacity duration-500 group-hover:bg-saffron-500/15" />
               <div className="relative">
-                <span className="grid h-12 w-12 place-items-center rounded-xl border border-saffron-500/30 bg-espresso-900/50 text-saffron-300 transition-colors group-hover:border-saffron-400/60 group-hover:text-saffron-200">
+            <span className="grid h-12 w-12 place-items-center rounded-xl border border-saffron-500/30 bg-cream-50/10 sm:bg-espresso-900/50 text-saffron-300 transition-colors group-hover:border-saffron-400/60 group-hover:text-saffron-200">
                   <p.icon className="h-6 w-6" strokeWidth={1.5} />
                 </span>
                 <h3 className="mt-3.5 font-serif text-2xl text-cream-50">{p.title}</h3>
