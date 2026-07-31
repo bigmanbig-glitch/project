@@ -44,7 +44,7 @@ export function Hero() {
           paid in USDT.
         </p>
 
-        <div className="animate-fade-up mt-7 flex w-full max-w-md flex-col items-stretch gap-3 [animation-delay:0.3s] sm:max-w-none sm:flex-row sm:items-center">
+        <div className="animate-fade-up mt-7 flex w-full max-w-md flex-col items-stretch gap-3 [animation-delay:0.3s] sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
           <a
             href="#saffron"
             className="group rounded-full bg-gold-gradient px-7 py-3.5 text-center font-semibold text-espresso-950 shadow-gold transition-transform hover:scale-105 active:scale-100 sm:px-8 sm:py-4"
