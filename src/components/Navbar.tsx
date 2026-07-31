@@ -39,7 +39,7 @@ export function Navbar() {
             </span>
             <span className="flex min-w-0 flex-col leading-none">
               <span className="truncate font-serif text-lg font-semibold tracking-wide text-cream-50 sm:text-xl">
-                Persian Treasures
+                Persian TESt
               </span>
               <span className="text-[10px] uppercase tracking-[0.32em] text-saffron-400/80">
                 Est. Khorasan
