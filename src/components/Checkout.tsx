@@ -98,7 +98,7 @@ export function Checkout() {
           {/* Order summary */}
           <div className={`reveal ${isVisible ? 'is-visible' : ''} flex flex-col gap-6`}>
             <div className="rounded-3xl border border-saffron-500/20 bg-espresso-800/50 p-4 backdrop-blur">
-              <h3 className="font-serif text-2xl text-cream-50">Order Summary</h3>
+              <h3 className="font-serif text-xl sm:text-2xl text-cream-50">Order Summary</h3>
               {items.length === 0 ? (
                 <p className="mt-3 text-sm text-cream-400">
                   Your cart is empty. Add saffron or a rug from the collection above to begin.
@@ -137,7 +137,7 @@ export function Checkout() {
                   <Lock className="h-5 w-5" strokeWidth={1.5} />
                 </span>
                 <div>
-                  <h3 className="font-serif text-2xl text-cream-50">USDT Payment</h3>
+                  <h3 className="font-serif text-xl sm:text-2xl text-cream-50">Order Summary</h3>
                   <p className="text-xs text-cream-400">Tether — TRC-20 &amp; ERC-20 networks</p>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export function Checkout() {
               onSubmit={handleSubmit}
               className="rounded-3xl border border-saffron-500/20 bg-espresso-800/50 p-4 backdrop-blur sm:p-5"
             >
-              <h3 className="font-serif text-2xl text-cream-50">Place Your Inquiry</h3>
+              <h3 className="font-serif text-xl sm:text-2xl text-cream-50">Order Summary</h3>
               <p className="mt-1 text-sm text-cream-400">
                 {count > 0
                   ? `${count} item${count > 1 ? 's' : ''} in your cart · $${totalUsd.toLocaleString()}`
