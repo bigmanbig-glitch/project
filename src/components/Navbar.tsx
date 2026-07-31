@@ -67,7 +67,7 @@ export function Navbar() {
              className="group relative flex items-center gap-2 rounded-full border border-saffron-border-saffron-500/30 bg-espresso-800/40 px-3 py-2 text-sm font-medium text-cream-100 transition-all hover:border-saffron-400/60 hover:bg-espresso-700/60 sm:px-4"
               aria-label={`Open cart, ${count} items`}
             >
-             <div className="h-4 w-4 bg-red-500"></div>
+             <ShoppingBag className="h-4 w-4 text-saffron-400" />
               <span className="hidden sm:inline">Cart</span>
               {count > 0 && (
                 <span className="grid h-5 min-w-5 place-items-center rounded-full bg-gold-gradient px-1 text-[11px] font-bold text-espresso-950">
