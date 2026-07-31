@@ -110,12 +110,12 @@ function RugCard({ rug, delay }: { rug: Rug; delay: number }) {
   return (
     <article
       ref={ref}
-      className={`reveal ${isVisible ? 'is-visible' : ''} group relative flex h-full flex-col overflow-hidden rounded-3xl border border-saffron-500/15 bg-espresso-800/50 transition-all duration-500 hover:-translate-y-1.5 hover:border-saffron-400/50 hover:shadow-gold-lg`}
+      className={`reveal ${isVisible ? 'is-visible' : ''} group relative flex h-full flex-col overflow-hidden rounded-3xl border border-saffron-500/30 bg-espresso-700/70 sm:border-saffron-500/15 sm:bg-espresso-800/50 transition-all duration-500 hover:-translate-y-1.5 hover:border-saffron-400/50 hover:shadow-gold-lg`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="relative aspect-[4/3] overflow-hidden border-b border-saffron-500/10">
         <RugArt pattern={rug.pattern} />
-        <div className="absolute left-4 top-4 rounded-full border border-saffron-500/30 bg-espresso-950/70 px-3 py-1 text-[10px] uppercase tracking-widest text-saffron-300 backdrop-blur">
+        <div className="absolute left-4 top-4 rounded-full border border-saffron-500/50 bg-espresso-950/70 px-3 py-1 text-[10px] uppercase tracking-widest text-saffron-200 sm:border-saffron-500/30 sm:text-saffron-300 backdrop-blur">
           {rug.dimensions}
         </div>
       </div>
@@ -123,22 +123,22 @@ function RugCard({ rug, delay }: { rug: Rug; delay: number }) {
       <div className="flex flex-1 flex-col p-5">
         <h4 className="font-serif text-2xl leading-tight text-cream-50">{rug.name}</h4>
 
-        <div className="mt-3 space-y-2 text-sm text-cream-300">
+        <div className="mt-3 space-y-2 text-sm text-cream-200 sm:text-cream-300">
           <p className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-saffron-400" />
+            <MapPin className="h-4 w-4 text-saffron-300 sm:text-saffron-400" />
             {rug.origin}
           </p>
           <p className="flex items-center gap-2">
-            <Ruler className="h-4 w-4 text-saffron-400" />
+            <Ruler className="h-4 w-4 text-saffron-300 sm:text-saffron-400" />
             {rug.dimensions}
           </p>
           <p className="flex items-center gap-2">
-            <Layers className="h-4 w-4 text-saffron-400" />
+            <Layers className="h-4 w-4 text-saffron-300 sm:text-saffron-400" />
             {rug.material}
           </p>
         </div>
 
-        <div className="mt-4 flex items-end justify-between border-t border-saffron-500/10 pt-4">
+        <div className="mt-4 flex items-end justify-between border-t border-saffron-500/20 pt-4 sm:border-saffron-500/10">
           <p className="font-serif text-3xl text-gold-gradient">
             ${rug.priceUsd.toLocaleString()}
             <span className="ml-1 text-sm text-cream-400">USD</span>
