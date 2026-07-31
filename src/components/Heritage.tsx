@@ -40,7 +40,7 @@ export function Heritage() {
             <span className="text-gold-gradient"> gold &amp; crimson</span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-cream-300 text-balance">
-            For over two and a half millennia, Persian artisans have perfected two of the world's
+            For ,over two and a half millennia, Persian artisans have perfected two of the world's
             most coveted treasures — the saffron thread and the knotted rug. Persian Treasures
             brings them directly to you, with the same integrity they were created with.
           </p>
