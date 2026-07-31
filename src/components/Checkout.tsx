@@ -106,14 +106,14 @@ export function Checkout() {
               ) : (
                 <ul className="mt-3 divide-y divide-saffron-500/10">
                   {items.map((i) => (
-                    <li key={i.product.id} className="flex items-center justify-between py-2">
-                      <div className="pr-3">
-                        <p className="font-serif text-lg text-cream-50">{i.product.name}</p>
+                    <li key={i.product.id} className="flex items-start justify-between gap-3 py-2">
+                      <div className="min-w-0 pr-3">
+                        <p className="break-words font-serif text-lg text-cream-50">{i.product.name}</p>
                         <p className="text-xs text-cream-400">
                           {i.product.weight ?? i.product.size} · Qty {i.quantity}
                         </p>
                       </div>
-                      <p className="font-serif text-lg text-saffron-300">
+                      <p className="shrink-0 font-serif text-lg text-saffron-300">
                         ${(i.product.priceUsd * i.quantity).toLocaleString()}
                       </p>
                     </li>
@@ -121,9 +121,9 @@ export function Checkout() {
                 </ul>
               )}
               {items.length > 0 && (
-                <div className="mt-3 flex items-center justify-between border-t border-saffron-500/15 pt-3">
+                <div className="mt-3 flex items-center justify-between gap-3 border-t border-saffron-500/15 pt-3">
                   <span className="text-sm uppercase tracking-widest text-cream-400">Total</span>
-                  <span className="font-serif text-4xl text-gold-gradient">
+                  <span className="shrink-0 font-serif text-4xl text-gold-gradient">
                     ${totalUsd.toLocaleString()}
                   </span>
                 </div>
@@ -141,7 +141,7 @@ export function Checkout() {
                   <p className="text-xs text-cream-400">Tether — TRC-20 &amp; ERC-20 networks</p>
                 </div>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-cream-300">
+              <p className="mt-3 break-words text-sm leading-relaxed text-cream-300">
                 Equivalent amount: <span className="font-semibold text-saffron-300">{usdtAmount} USDT</span>
                 {' '}(≈ ${usdtAmount} USD). Send only USDT to the networks below. Confirm the exact
                 address with us on Telegram before transferring.
@@ -174,10 +174,10 @@ export function Checkout() {
                   </div>
                 ))}
               </div>
-              <p className="mt-3 flex items-start gap-2 text-xs leading-relaxed text-cream-400">
+              <p className="mt-3 flex items-start gap-2 break-words text-xs leading-relaxed text-cream-400">
                 <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-saffron-400" />
-                Always verify the wallet address with our team before sending funds. Addresses
-                shown are examples — the final address is provided after your inquiry is confirmed.
+                <span>Always verify the wallet address with our team before sending funds. Addresses
+                shown are examples — the final address is provided after your inquiry is confirmed.</span>
               </p>
             </div>
           </div>
@@ -241,12 +241,12 @@ export function Checkout() {
               {status === 'success' ? (
                 <div className="mt-4 rounded-xl border border-teal-500/30 bg-teal-500/10 px-5 py-3">
                   <p className="flex items-center gap-2 font-serif text-xl text-teal-400">
-                    <CheckCircle2 className="h-5 w-5" /> Inquiry received!
+                    <CheckCircle2 className="h-5 w-5 shrink-0" /> Inquiry received!
                   </p>
-                  <p className="mt-1 text-sm text-cream-300">
+                  <p className="mt-1 break-words text-sm text-cream-300">
                     Thank you. Our team will confirm your order and share the final USDT wallet
                     address shortly. For an instant reply, message us on Telegram{' '}
-                    <a href={TELEGRAM_URL} target="_blank" rel="noreferrer" className="font-medium text-saffron-300 underline">
+                    <a href={TELEGRAM_URL} target="_blank" rel="noreferrer" className="break-all font-medium text-saffron-300 underline">
                       {TELEGRAM_HANDLE}
                     </a>.
                   </p>
