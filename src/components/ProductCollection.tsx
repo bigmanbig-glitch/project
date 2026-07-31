@@ -52,7 +52,7 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
   return (
     <article
       ref={ref}
-      className={`reveal ${isVisible ? 'is-visible' : ''} group relative flex flex-col overflow-hidden rounded-3xl border border-saffron-500/30 bg-espresso-700/70 sm:border-saffron-500/15 sm:bg-espresso-800/50 transition-all duration-500 hover:-translate-y-1.5 ${accentRing} hover:shadow-gold-lg`}
+      className={`reveal ${isVisible ? 'is-visible' : ''} group relative flex flex-col overflow-hidden rounded-3xl border border-saffron-500/15 bg-espresso-800/50 transition-all duration-500 hover:-translate-y-1.5 ${accentRing} hover:shadow-gold-lg`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {/* Art */}
@@ -61,7 +61,7 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
           product={product}
           className="h-full w-full transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute left-4 top-4 rounded-full border border-saffron-500/50 bg-espresso-950/70 px-3 py-1 text-[10px] uppercase tracking-widest text-saffron-200 sm:border-saffron-500/30 sm:text-saffron-300 backdrop-blur">
+        <div className="absolute left-4 top-4 rounded-full border border-saffron-500/30 bg-espresso-950/70 px-3 py-1 text-[10px] uppercase tracking-widest text-saffron-300 backdrop-blur">
           {product.grade ?? product.size}
         </div>
       </div>
@@ -76,16 +76,16 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
 
         <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
           {product.features.map((f) => (
-            <li key={f} className="flex items-center gap-1.5 text-xs text-cream-200 sm:text-cream-300">
-              <Check className="h-3.5 w-3.5 text-saffron-300 sm:text-saffron-400" strokeWidth={2.5} />
+            <li key={f} className="flex items-center gap-1.5 text-xs text-cream-300">
+              <Check className="h-3.5 w-3.5 text-saffron-400" strokeWidth={2.5} />
               {f}
             </li>
           ))}
         </ul>
 
-        <div className="mt-3.5 flex items-end justify-between border-t border-saffron-500/20 pt-3.5 sm:border-saffron-500/10">
+        <div className="mt-3.5 flex items-end justify-between border-t border-saffron-500/10 pt-3.5">
           <div>
-            <p className="text-[10px] uppercase tracking-widest text-cream-300 sm:text-cream-400">From {product.origin}</p>
+            <p className="text-[10px] uppercase tracking-widest text-cream-400">From {product.origin}</p>
             <p className="font-serif text-3xl text-gold-gradient">
               ${product.priceUsd.toLocaleString()}
               <span className="ml-1 text-sm text-cream-400">USD</span>

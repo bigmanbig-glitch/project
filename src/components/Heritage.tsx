@@ -50,12 +50,12 @@ export function Heritage() {
           {PILLARS.map((p, i) => (
             <article
               key={p.title}
-              className={`reveal ${isVisible ? 'is-visible' : ''} group relative overflow-hidden rounded-2xl border border-saffron-500/15 bg-espresso-800/40 p-5 transition-all duration-500 hover:border-saffron-400/40 hover:bg-espresso-700/40`}
+              className={`reveal ${isVisible ? 'is-visible' : ''} group relative overflow-hidden rounded-2xl border border-saffron-500/15 bg-espresso-800/50 p-5 transition-all duration-500 hover:border-saffron-400/40 hover:bg-espresso-700/40`}
               style={{ transitionDelay: `${i * 90}ms` }}
             >
               <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-saffron-500/5 blur-2xl transition-opacity duration-500 group-hover:bg-saffron-500/15" />
               <div className="relative">
-                <span className="grid h-12 w-12 place-items-center rounded-xl border border-saffron-500/30 bg-espresso-900/60 text-saffron-300 transition-colors group-hover:border-saffron-400/60 group-hover:text-saffron-200">
+                <span className="grid h-12 w-12 place-items-center rounded-xl border border-saffron-500/30 bg-espresso-900/50 text-saffron-300 transition-colors group-hover:border-saffron-400/60 group-hover:text-saffron-200">
                   <p.icon className="h-6 w-6" strokeWidth={1.5} />
                 </span>
                 <h3 className="mt-3.5 font-serif text-2xl text-cream-50">{p.title}</h3>
