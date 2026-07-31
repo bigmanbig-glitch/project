@@ -123,7 +123,7 @@ export function Checkout() {
               {items.length > 0 && (
                 <div className="mt-3 flex items-center justify-between gap-3 border-t border-saffron-500/15 pt-3">
                   <span className="text-sm uppercase tracking-widest text-cream-400">Total</span>
-                  <span className="shrink-0 font-serif text-3xl sm:text-4xl text-gold-gradient">
+                  <span className="shrink-0 font-serif text-4xl text-gold-gradient">
                     ${totalUsd.toLocaleString()}
                   </span>
                 </div>
