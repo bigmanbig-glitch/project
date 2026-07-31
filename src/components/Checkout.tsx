@@ -81,7 +81,7 @@ export function Checkout() {
       <div className="persian-pattern-dense absolute inset-0 opacity-25" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(232,168,56,0.12),transparent_60%)]" />
 
-      <div className="relative mx-auto max-w-8xl px-5 sm:px-8">
+      <div className="relative mx-auto max-w-8xl overflow-x-hidden px-5 sm:px-8">
         <div className={`reveal ${isVisible ? 'is-visible' : ''} mx-auto max-w-3xl text-center`}>
           <p className="text-xs uppercase tracking-[0.32em] text-saffron-400">Checkout &amp; Orders</p>
           <h2 className="mt-3 font-serif text-4xl leading-tight text-cream-50 sm:text-6xl">
