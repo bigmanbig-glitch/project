@@ -215,5 +215,3 @@ function TabloCard({ tablo, delay, isRoyal }: { tablo: TabloFarsh; delay: number
   );
 }
 
-
-export { TabloFarsh }
