@@ -96,7 +96,7 @@ export function Checkout() {
 
         <div className="mt-10 grid w-full gap-4 sm:mt-11 sm:gap-5 lg:grid-cols-[1fr_1.1fr]">
           {/* Order summary */}
-          <div className={`reveal ${isVisible ? 'is-visible' : ''} flex flex-col gap-6`}>
+      <div className={`reveal ${isVisible ? 'is-visible' : ''} flex flex-col gap-6 border border-red-500`}>
             <div className="rounded-3xl border border-saffron-500/20 bg-espresso-800/50 p-4 backdrop-blur">
          <h3 className="font-serif text-2xl text-cream-50">Order Summary</h3>
               {items.length === 0 ? (
