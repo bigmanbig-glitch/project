@@ -94,7 +94,7 @@ export function Checkout() {
           </p>
         </div>
 
-        <div className="mt-10 grid w-full gap-4 sm:mt-11 sm:gap-5 lg:grid-cols-[1fr_1.1fr]">
+        <div className="relative mx-auto max-w-8xl px-5 sm:px-8">
           {/* Order summary */}
           <div className={`reveal ${isVisible ? 'is-visible' : ''} flex flex-col gap-6`}>
             <div className="rounded-3xl border border-saffron-500/20 bg-espresso-800/50 p-4 backdrop-blur">
