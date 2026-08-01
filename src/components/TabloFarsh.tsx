@@ -1,6 +1,8 @@
 import { useRef, useState, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Lock, Ruler, BadgeCheck } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Lock, Ruler, BadgeCheck, Plus } from 'lucide-react';
 import { TABLO_COLLECTIONS, type TabloFarsh, type TabloGrade } from '@/data/tablos';
+import { useCart } from '@/context/CartContext';
+import type { Product } from '@/data/products';
 import { useReveal } from '@/hooks/useReveal';
 
 const gradeStyles: Record<TabloGrade, { ring: string; text: string; bg: string; label: string }> = {
@@ -84,7 +86,7 @@ function TabloRail({ collection }: { collection: typeof TABLO_COLLECTIONS[number
             data-card
             className="snap-start shrink-0 w-[78vw] max-w-[340px] sm:w-[calc(50%-0.625rem)] sm:max-w-none lg:w-[calc(25%-0.9375rem)]"
           >
-            <TabloCard tablo={tablo} delay={i * 60} />
+            <TabloCard tablo={tablo} delay={i * 60} isRoyal={collection.id === 'tablo-royal'} />
           </div>
         ))}
       </div>
@@ -110,9 +112,27 @@ function NavArrow({ dir, disabled, onClick }: { dir: 'left' | 'right'; disabled:
   );
 }
 
-function TabloCard({ tablo, delay }: { tablo: TabloFarsh; delay: number }) {
+function TabloCard({ tablo, delay, isRoyal }: { tablo: TabloFarsh; delay: number; isRoyal: boolean }) {
+  const { addItem } = useCart();
   const { ref, isVisible } = useReveal();
   const g = gradeStyles[tablo.grade];
+
+  const handleAdd = () => {
+    const product: Product = {
+      id: tablo.id,
+      name: tablo.name,
+      tagline: tablo.size,
+      description: tablo.description,
+      category: 'rugs',
+      priceUsd: tablo.priceUsd,
+      size: tablo.size,
+      origin: 'Persian Tapestry',
+      grade: `Grade ${tablo.grade}`,
+      features: [tablo.size, `Grade ${tablo.grade}`],
+      accent: 'gold',
+    };
+    addItem(product);
+  };
 
   return (
     <article
@@ -171,14 +191,29 @@ function TabloCard({ tablo, delay }: { tablo: TabloFarsh; delay: number }) {
           </p>
         </div>
 
-        <button
-          type="button"
-          className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border border-saffron-400/40 bg-saffron-500/10 px-5 py-3 text-sm font-semibold uppercase tracking-wider text-saffron-200 transition-all duration-300 hover:border-saffron-300/60 hover:bg-saffron-500/20 hover:text-saffron-100"
-        >
-          <Lock className="h-4 w-4" />
-          Request Access
-        </button>
+        {isRoyal ? (
+          <button
+            type="button"
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border border-saffron-400/40 bg-saffron-500/10 px-5 py-3 text-sm font-semibold uppercase tracking-wider text-saffron-200 transition-all duration-300 hover:border-saffron-300/60 hover:bg-saffron-500/20 hover:text-saffron-100"
+          >
+            <Lock className="h-4 w-4" />
+            Request Access
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={handleAdd}
+            className="group/btn mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-gold-gradient px-5 py-3 font-semibold text-espresso-950 shadow-gold transition-transform hover:scale-[1.03] active:scale-100"
+            aria-label={`Add ${tablo.name} to cart`}
+          >
+            <Plus className="h-4 w-4 transition-transform group-hover/btn:rotate-90" />
+            Add
+          </button>
+        )}
       </div>
     </article>
   );
 }
+
+
+export { TabloFarsh }
