@@ -5,6 +5,7 @@ import { Hero } from '@/components/Hero';
 import { Heritage } from '@/components/Heritage';
 import { ProductCollection } from '@/components/ProductCollection';
 import { RugCollection } from '@/components/RugCollection';
+import { TabloFarsh } from '@/components/TabloFarsh';
 import { Checkout } from '@/components/Checkout';
 import { Contact, Footer } from '@/components/Contact';
 import { PRODUCTS } from '@/data/products';
@@ -38,6 +39,7 @@ function App() {
             intro="Traditional pistachio nougat from Bojnourd and Boldaji — soft manna-and-egg-white Gaz studded with premium Akbari pistachios. The beloved sweet of Persian celebrations, now available worldwide."
           />
           <RugCollection />
+          <TabloFarsh />
           <Checkout />
           <Contact />
         </main>
