@@ -182,6 +182,3 @@ function TabloCard({ tablo, delay }: { tablo: TabloFarsh; delay: number }) {
     </article>
   );
 }
-
-
-export { TabloFarsh }

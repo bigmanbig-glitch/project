@@ -1,6 +1,8 @@
 import { useRef, useState, useCallback, useId } from 'react';
-import { ChevronLeft, ChevronRight, MapPin, Ruler, Layers } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MapPin, Ruler, Layers, Plus } from 'lucide-react';
 import { RUG_COLLECTIONS, type Rug, type RugPattern } from '@/data/rugs';
+import { useCart } from '@/context/CartContext';
+import type { Product } from '@/data/products';
 import { useReveal } from '@/hooks/useReveal';
 
 export function RugCollection() {
@@ -105,7 +107,24 @@ function NavArrow({ dir, disabled, onClick }: { dir: 'left' | 'right'; disabled:
 }
 
 function RugCard({ rug, delay }: { rug: Rug; delay: number }) {
+  const { addItem } = useCart();
   const { ref, isVisible } = useReveal();
+
+  const handleAdd = () => {
+    const product: Product = {
+      id: rug.id,
+      name: rug.name,
+      tagline: rug.material,
+      description: `${rug.origin} · ${rug.dimensions}`,
+      category: 'rugs',
+      priceUsd: rug.priceUsd,
+      size: rug.dimensions,
+      origin: rug.origin,
+      features: [rug.material, rug.dimensions],
+      accent: 'gold',
+    };
+    addItem(product);
+  };
 
   return (
     <article
@@ -143,6 +162,14 @@ function RugCard({ rug, delay }: { rug: Rug; delay: number }) {
             ${rug.priceUsd.toLocaleString()}
             <span className="ml-1 text-sm text-cream-400">USD</span>
           </p>
+          <button
+            onClick={handleAdd}
+            className="group/btn flex items-center gap-2 rounded-full bg-gold-gradient px-5 py-2.5 font-semibold text-espresso-950 shadow-gold transition-transform hover:scale-105 active:scale-100"
+            aria-label={`Add ${rug.name} to cart`}
+          >
+            <Plus className="h-4 w-4 transition-transform group-hover/btn:rotate-90" />
+            Add
+          </button>
         </div>
       </div>
     </article>
