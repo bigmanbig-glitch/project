@@ -20,7 +20,7 @@ export function TabloFarsh() {
         <div className={`reveal ${isVisible ? 'is-visible' : ''} mx-auto max-w-3xl text-center`}>
           <p className="text-xs uppercase tracking-[0.32em] text-saffron-400">Pictorial Carpets</p>
           <h2 className="mt-3 font-serif text-4xl leading-tight text-cream-50 sm:text-6xl">
-            Tablo <span className="text-gold-gradient">Farsh</span>
+            Persian <span className="text-gold-gradient">Tapestry</span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-cream-300 text-balance">
             Picture carpets — woven paintings where master weavers translate gardens, hunting scenes, and royal motifs into knot-count artistry. Each piece is offered as a private viewing; request access to reveal the full-resolution artwork.
@@ -182,3 +182,6 @@ function TabloCard({ tablo, delay }: { tablo: TabloFarsh; delay: number }) {
     </article>
   );
 }
+
+
+export { TabloFarsh }
