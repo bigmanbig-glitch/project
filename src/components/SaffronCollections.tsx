@@ -110,7 +110,7 @@ function SaffronRail({ type }: { type: SaffronType }) {
       <div
         ref={scrollerRef}
         onScroll={updateArrows}
-        className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [touch-action:pan-x] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {products.map((product, i) => (
           <div
@@ -143,3 +143,6 @@ function NavArrow({ dir, disabled, onClick }: { dir: 'left' | 'right'; disabled:
     </button>
   );
 }
+
+
+export { SaffronCollections }
