@@ -143,6 +143,3 @@ function NavArrow({ dir, disabled, onClick }: { dir: 'left' | 'right'; disabled:
     </button>
   );
 }
-
-
-export { SaffronCollections }
