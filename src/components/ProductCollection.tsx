@@ -67,7 +67,7 @@ export function ProductCard({ product, delay }: { product: Product; delay: numbe
       </div>
 
       {/* Body */}
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex min-h-[430px] flex-1 flex-col p-4">
         <h3 className="font-serif text-2xl leading-tight text-cream-50">{product.name}</h3>
         <p className="mt-1 text-sm font-medium uppercase tracking-wider text-saffron-400/90">
           {product.tagline}
