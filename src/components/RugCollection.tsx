@@ -162,15 +162,17 @@ function RugCard({ rug, delay }: { rug: Rug; delay: number }) {
             ${rug.priceUsd.toLocaleString()}
             <span className="ml-1 text-sm text-cream-400">USD</span>
           </p>
-          <button
-            onClick={handleAdd}
-            className="group/btn flex items-center gap-2 rounded-full bg-gold-gradient px-5 py-2.5 font-semibold text-espresso-950 shadow-gold transition-transform hover:scale-105 active:scale-100"
-            aria-label={`Add ${rug.name} to cart`}
-          >
-            <Plus className="h-4 w-4 transition-transform group-hover/btn:rotate-90" />
-            Add
-          </button>
         </div>
+
+        <button
+          type="button"
+          onClick={handleAdd}
+          className="group/btn mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-gold-gradient px-5 py-3 font-semibold text-espresso-950 shadow-gold transition-transform hover:scale-[1.03] active:scale-100"
+          aria-label={`Add ${rug.name} to cart`}
+        >
+          <Plus className="h-4 w-4 transition-transform group-hover/btn:rotate-90" />
+          Add
+        </button>
       </div>
     </article>
   );
