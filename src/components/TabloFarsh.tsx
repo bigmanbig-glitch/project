@@ -78,7 +78,7 @@ function TabloRail({ collection }: { collection: typeof TABLO_COLLECTIONS[number
       <div
         ref={scrollerRef}
         onScroll={updateArrows}
-        className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [touch-action:auto] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [touch-action:pan-x] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {collection.tablos.map((tablo, i) => (
           <div

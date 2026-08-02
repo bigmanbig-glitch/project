@@ -110,13 +110,13 @@ function SaffronRail({ type }: { type: SaffronType }) {
       <div
         ref={scrollerRef}
         onScroll={updateArrows}
-        className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [touch-action:auto] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [touch-action:pan-x] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {products.map((product, i) => (
           <div
             key={product.id}
             data-card
-           className="snap-start shrink-0 w-[78vw] max-w-[300px] sm:w-[calc(50%-0.625rem)] sm:max-w-none lg:w-[calc(25%-0.9375rem)]"
+            className="snap-start shrink-0 w-[78vw] max-w-[300px] sm:w-[calc(50%-0.625rem)] sm:max-w-none lg:w-[calc(25%-0.9375rem)]"
           >
             <ProductCard product={product} delay={i * 60} />
           </div>
