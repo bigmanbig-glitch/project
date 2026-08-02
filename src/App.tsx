@@ -4,6 +4,7 @@ import { CartDrawer } from '@/components/CartDrawer';
 import { Hero } from '@/components/Hero';
 import { Heritage } from '@/components/Heritage';
 import { ProductCollection } from '@/components/ProductCollection';
+import { SaffronCollections } from '@/components/SaffronCollections';
 import { RugCollection } from '@/components/RugCollection';
 import { TabloFarsh } from '@/components/TabloFarsh';
 import { Checkout } from '@/components/Checkout';
@@ -11,7 +12,6 @@ import { Contact, Footer } from '@/components/Contact';
 import { PRODUCTS } from '@/data/products';
 
 function App() {
-  const saffronProducts = PRODUCTS.filter((p) => p.category === 'saffron');
   const gazProducts = PRODUCTS.filter((p) => p.category === 'confectionery');
 
   return (
@@ -22,14 +22,7 @@ function App() {
         <main>
           <Hero />
           <Heritage />
-          <ProductCollection
-            id="saffron"
-            products={saffronProducts}
-            eyebrow="The Golden Spice"
-            title="Premium Persian"
-            highlight="Saffron"
-            intro="Hand-harvested Negin, Sargol, and Pushal saffron from the sun-drenched fields of Khorasan — the historic homeland of the world's finest saffron for more than three millennia."
-          />
+          <SaffronCollections />
           <ProductCollection
             id="confectionery"
             products={gazProducts}

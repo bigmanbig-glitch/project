@@ -40,7 +40,7 @@ export function ProductCollection({ products, id, eyebrow, title, highlight, int
   );
 }
 
-function ProductCard({ product, delay }: { product: Product; delay: number }) {
+export function ProductCard({ product, delay }: { product: Product; delay: number }) {
   const { addItem } = useCart();
   const { ref, isVisible } = useReveal();
 

@@ -24,7 +24,7 @@ export const TELEGRAM_URL = 'https://t.me/PersianTreasures';
 export const TELEGRAM_HANDLE = '@PersianTreasures';
 
 // ---------------------------------------------------------------------------
-// Saffron collection — 4 grades, each in 5g / 10g / 50g / 100g packaging.
+// Saffron collection — 5 grades, each in 5g / 10g / 50g / 100g packaging.
 // Prices are per-type (bulk discount at larger sizes) and grounded in real
 // retail tiers: Negin (premium) > Sargol > Pushal > Dast (most economical).
 // ---------------------------------------------------------------------------
@@ -62,8 +62,8 @@ const SAFFRON_PACKAGINGS: SaffronPackaging[] = [
   },
 ];
 
-interface SaffronType {
-  key: 'sargol' | 'negin' | 'pushal' | 'dast';
+export interface SaffronType {
+  key: 'super-negin' | 'sargol' | 'negin' | 'pushal' | 'dast';
   label: string;
   character: string;
   grade: string;
@@ -73,7 +73,18 @@ interface SaffronType {
   prices: Record<number, number>;
 }
 
-const SAFFRON_TYPES: SaffronType[] = [
+export const SAFFRON_TYPES: SaffronType[] = [
+  {
+    key: 'super-negin',
+    label: 'Super Negin Saffron',
+    character: 'Extra-Long All-Red',
+    grade: 'Super Negin — Grade A+',
+    accent: 'crimson',
+    typeLead:
+      'Super Negin is the absolute pinnacle of Persian saffron — the longest, thickest, and most vivid all-red threads available anywhere. Hand-selected from the earliest harvest blooms, each strand is a flawless, extra-long all-red stigma with no yellow style. Its coloring strength and aroma exceed every other grade, making it the ultimate connoisseur choice. Lab-verified to far exceed ISO 3632 Grade A.',
+    typeFeatures: ['Extra-long all-red', 'Crocin 290+', 'ISO 3632 Grade A+'],
+    prices: { 5: 99, 10: 189, 50: 820, 100: 1490 },
+  },
   {
     key: 'negin',
     label: 'Negin Saffron',

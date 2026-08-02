@@ -44,7 +44,7 @@ function DefaultArt() {
 // Saffron art — themed by grade, shaped by packaging size.
 // ---------------------------------------------------------------------------
 
-type SaffronTypeKey = 'sargol' | 'negin' | 'pushal' | 'dast';
+type SaffronTypeKey = 'super-negin' | 'sargol' | 'negin' | 'pushal' | 'dast';
 
 interface SaffronTheme {
   lid: string;
@@ -55,6 +55,7 @@ interface SaffronTheme {
 }
 
 const SAFFRON_THEMES: Record<SaffronTypeKey, SaffronTheme> = {
+  'super-negin': { lid: '#7a1410', lidDark: '#4a0a08', thread: '#a8281f', threadAlt: '#f5d27a', label: 'SUPER NEGIN' },
   sargol: { lid: '#c9352f', lidDark: '#7a1f18', thread: '#c9352f', threadAlt: '#c9352f', label: 'SARGOL' },
   negin: { lid: '#8a1f18', lidDark: '#5a1410', thread: '#a8281f', threadAlt: '#c9352f', label: 'NEGIN' },
   pushal: { lid: '#b8651a', lidDark: '#7a4a1f', thread: '#c9352f', threadAlt: '#e8a838', label: 'PUSHAL' },
@@ -62,7 +63,8 @@ const SAFFRON_THEMES: Record<SaffronTypeKey, SaffronTheme> = {
 };
 
 function renderSaffron(product: Product): React.ReactNode {
-  const typeKey = (product.id.split('-')[1] ?? 'sargol') as SaffronTypeKey;
+  const parts = product.id.split('-');
+  const typeKey = (parts.slice(1, -1).join('-') || 'sargol') as SaffronTypeKey;
   const grams = parseInt(product.weight ?? '5', 10);
   return <SaffronPack typeKey={typeKey} grams={grams} />;
 }
