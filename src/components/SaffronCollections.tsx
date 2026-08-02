@@ -116,7 +116,7 @@ function SaffronRail({ type }: { type: SaffronType }) {
           <div
             key={product.id}
             data-card
-            className="snap-start shrink-0 w-[78vw] max-w-[300px] sm:w-[calc(50%-0.625rem)] sm:max-w-none lg:w-[calc(25%-0.9375rem)]"
+           className="snap-start shrink-0 h-full w-[78vw] max-w-[300px] sm:w-[calc(50%-0.625rem)] sm:max-w-none lg:w-[calc(25%-0.9375rem)]"
           >
             <ProductCard product={product} delay={i * 60} />
           </div>
