@@ -58,16 +58,19 @@ export function Navbar() {
   {LINKS.map((l) =>
     l.label === 'Collections' ? (
       <li key={l.href} className="relative">
-        <button
-          onClick={() => setCollectionsOpen((v) => !v)}
-          className="group relative text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
-        >
-          Collections
-  <ChevronDown
-    className={`h-4 w-4 transition-transform duration-300 ${
-      collectionsOpen ? 'rotate-180' : ''
-    }`}
-  />
+     <button
+  onClick={() => setCollectionsOpen((v) => !v)}
+  className="group relative flex items-center gap-1 text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
+>
+  <span className="flex items-center gap-1">
+    Collections
+    <ChevronDown
+      className={`h-4 w-4 transition-transform duration-300 ${
+        collectionsOpen ? 'rotate-180' : ''
+      }`}
+    />
+  </span>
+
   <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
 </button>
 
