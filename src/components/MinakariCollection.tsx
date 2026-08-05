@@ -73,7 +73,7 @@ function SubCollection({ collection }: { collection: typeof MINA_COLLECTIONS[num
       <div
         ref={scrollerRef}
         onScroll={updateArrows}
-        className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [touch-action:pan-x] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [touch-action:pan-x_pan-y] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {collection.minas.map((mina, i) => (
           <div
