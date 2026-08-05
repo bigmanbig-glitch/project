@@ -24,12 +24,28 @@ export function Navbar() {
   const collectionsRef = useRef<HTMLLIElement>(null);
   const { count, open } = useCart();
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+ useEffect(() => {
+  const onScroll = () => setScrolled(window.scrollY > 24);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      collectionsRef.current &&
+      !collectionsRef.current.contains(event.target as Node)
+    ) {
+      setCollectionsOpen(false);
+    }
+  };
+
+  onScroll();
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  document.addEventListener('mousedown', handleClickOutside);
+
+  return () => {
+    window.removeEventListener('scroll', onScroll);
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, []);
 
   return (
     <>
