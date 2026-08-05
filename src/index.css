@@ -29,11 +29,12 @@
   touch-action: auto;
 }
 
-  #root {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-
+ #root {
+  overflow-x: hidden;
+  overflow-y: visible;
+  max-width: 100vw;
+  touch-action: auto;
+}
   img, svg, video {
     max-width: 100%;
   }
