@@ -5,6 +5,7 @@ import { Hero } from '@/components/Hero';
 import { Heritage } from '@/components/Heritage';
 import { SaffronCollections } from '@/components/SaffronCollections';
 import { RugCollection } from '@/components/RugCollection';
+import { KhatamCollection } from '@/components/KhatamCollection';
 import { TabloFarsh } from '@/components/TabloFarsh';
 import { Checkout } from '@/components/Checkout';
 import { Contact, Footer } from '@/components/Contact';
@@ -21,6 +22,7 @@ function App() {
           <Heritage />
           <SaffronCollections />
           <RugCollection />
+          <KhatamCollection />
           <TabloFarsh />
           <Checkout />
           <Contact />
