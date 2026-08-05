@@ -182,6 +182,3 @@ export function SaffronMark({ className }: { className?: string }) {
       <path d="M16 16c5 2 8 5 9 9c-5-1-8-4-9-9z" fill="#c9352f" />
       <path d="M16 10v8" stroke="#7a4a1f" strokeWidth="1" strokeLinecap="round" />
     </svg>
-  );
-}
-```
