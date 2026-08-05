@@ -22,8 +22,8 @@ function App() {
           <Heritage />
           <SaffronCollections />
           <RugCollection />
-          <KhatamCollection />
           <TabloFarsh />
+          <KhatamCollection />
           <Checkout />
           <Contact />
         </main>
