@@ -52,7 +52,7 @@ export function ProductCard({ product, delay }: { product: Product; delay: numbe
   return (
     <article
       ref={ref}
-      className={`reveal ${isVisible ? 'is-visible' : ''} group relative flex flex-col overflow-hidden rounded-3xl border border-saffron-500/15 bg-espresso-800/50 transition-all duration-500 hover:-translate-y-1.5 ${accentRing} hover:shadow-gold-lg`}
+      className={`reveal ${isVisible ? 'is-visible' : ''} group relative flex h-full flex-col overflow-hidden rounded-3xl border border-saffron-500/15 bg-espresso-800/50 transition-all duration-500 hover:-translate-y-1.5 ${accentRing} hover:shadow-gold-lg`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {/* Art */}
