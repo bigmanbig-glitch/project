@@ -54,19 +54,46 @@ export function Navbar() {
             </span>
           </a>
 
-          <ul className="hidden items-center gap-3 lg:flex">
-            {LINKS.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-className="group relative text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
-                >
-                  {l.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
-                </a>
-              </li>
+       <ul className="hidden items-center gap-3 lg:flex">
+  {LINKS.map((l) =>
+    l.label === 'Collections' ? (
+      <li key={l.href} className="relative">
+        <button
+          onClick={() => setCollectionsOpen((v) => !v)}
+          className="group relative text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
+        >
+          Collections
+          <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
+        </button>
+
+        {collectionsOpen && (
+          <div className="absolute left-0 top-full mt-4 w-56 rounded-xl border border-saffron-500/20 bg-espresso-900/95 p-2 shadow-xl backdrop-blur-xl">
+            {COLLECTIONS.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="block rounded-lg px-4 py-2 text-sm text-cream-200 transition-colors hover:bg-espresso-800 hover:text-saffron-300"
+                onClick={() => setCollectionsOpen(false)}
+              >
+                {item.label}
+              </a>
             ))}
-          </ul>
+          </div>
+        )}
+      </li>
+    ) : (
+      <li key={l.href}>
+        <a
+          href={l.href}
+          className="group relative text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
+        >
+          {l.label}
+          <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
+        </a>
+      </li>
+    )
+  )}
+</ul>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <button
