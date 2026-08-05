@@ -54,7 +54,7 @@ export function Navbar() {
             </span>
           </a>
 
-       <ul className="hidden items-center gap-3 lg:flex">
+       <ul className="hidden items-center gap-5 lg:flex">
   {LINKS.map((l) =>
     l.label === 'Collections' ? (
       <li key={l.href} className="relative">
