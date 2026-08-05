@@ -20,6 +20,7 @@ const COLLECTIONS = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [collectionsOpen, setCollectionsOpen] = useState(false);
   const { count, open } = useCart();
 
   useEffect(() => {
