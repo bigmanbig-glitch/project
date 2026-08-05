@@ -21,6 +21,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [collectionsOpen, setCollectionsOpen] = useState(false);
+  const collectionsRef = useRef<HTMLLIElement>(null);
   const { count, open } = useCart();
 
   useEffect(() => {
