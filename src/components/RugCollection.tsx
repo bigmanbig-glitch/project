@@ -157,7 +157,7 @@ function RugCard({ rug, delay }: { rug: Rug; delay: number }) {
           </p>
         </div>
 
-        <div className="mt-4 flex items-end justify-between border-t border-saffron-500/10 pt-4">
+        <div className="mt-auto flex items-end justify-between border-t border-saffron-500/10 pt-4">
           <p className="font-serif text-3xl text-gold-gradient">
             ${rug.priceUsd.toLocaleString()}
             <span className="ml-1 text-sm text-cream-400">USD</span>
