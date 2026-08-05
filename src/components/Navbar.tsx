@@ -50,12 +50,12 @@ export function Navbar() {
             </span>
           </a>
 
-          <ul className="hidden items-center gap-5 lg:flex">
+          <ul className="hidden items-center gap-3 lg:flex">
             {LINKS.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="group relative text-sm font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300"
+className="group relative text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
                 >
                   {l.label}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
