@@ -74,7 +74,7 @@ export function Navbar() {
        <ul className="hidden items-center gap-5 lg:flex">
   {LINKS.map((l) =>
     l.label === 'Collections' ? (
-      <li key={l.href} className="relative">
+  <li ref={collectionsRef} key={l.href} className="relative">
      <button
   onClick={() => setCollectionsOpen((v) => !v)}
   className="group relative flex items-center gap-1 text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
