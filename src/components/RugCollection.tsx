@@ -139,7 +139,7 @@ function RugCard({ rug, delay }: { rug: Rug; delay: number }) {
         </div>
       </div>
 
-      <div className="mt-4 flex items-end justify-between border-t border-saffron-500/10 pt-4">
+      <div className="flex flex-1 flex-col p-5">
         <h4 className="font-serif text-2xl leading-tight text-cream-50">{rug.name}</h4>
 
         <div className="mt-3 space-y-2 text-sm text-cream-300">
