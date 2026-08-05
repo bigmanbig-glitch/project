@@ -165,4 +165,12 @@
     opacity: 1;
     transform: translateY(0);
   }
+html,
+body,
+#root {
+  min-height: 100%;
+  height: auto;
+  overflow-y: auto !important;
+  touch-action: auto !important;
+}
 }
