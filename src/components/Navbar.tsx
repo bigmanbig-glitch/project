@@ -70,7 +70,7 @@ export function Navbar() {
             </span>
           </a>
 
-       <ul className="hidden items-center gap-5 lg:flex -translate-x-[20px]">
+       <ul className="hidden items-center gap-5 lg:flex -translate-x-[32px]">
   {LINKS.map((l) =>
     l.label === 'Collections' ? (
   <li ref={collectionsRef} key={l.href} className="relative">
