@@ -63,8 +63,13 @@ export function Navbar() {
           className="group relative text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
         >
           Collections
-          <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
-        </button>
+  <ChevronDown
+    className={`h-4 w-4 transition-transform duration-300 ${
+      collectionsOpen ? 'rotate-180' : ''
+    }`}
+  />
+  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
+</button>
 
         {collectionsOpen && (
           <div className="absolute left-0 top-full mt-4 w-56 rounded-xl border border-saffron-500/20 bg-espresso-900/95 p-2 shadow-xl backdrop-blur-xl">
