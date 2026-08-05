@@ -4,14 +4,17 @@ import { useCart } from '@/context/CartContext';
 
 const LINKS = [
   { label: 'Heritage', href: '#heritage' },
+  { label: 'Collections', href: '#collections' },
+  { label: 'Checkout', href: '#checkout' },
+  { label: 'Contact', href: '#contact' },
+];
+const COLLECTIONS = [
   { label: 'Saffron', href: '#saffron' },
   { label: 'Rugs', href: '#rugs' },
   { label: 'Persian Tapestry', href: '#tapestry' },
+  { label: 'Tablo Farsh', href: '#tablo-farsh' },
   { label: 'Khatamkari', href: '#khatamkari' },
   { label: 'Minakari', href: '#minakari' },
-  { label: 'Tablo Farsh', href: '#tablo-farsh' },
-  { label: 'Checkout', href: '#checkout' },
-  { label: 'Contact', href: '#contact' },
 ];
 
 export function Navbar() {
