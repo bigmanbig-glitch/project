@@ -90,9 +90,9 @@ export function Navbar() {
 
         {/* Mobile menu */}
         <div
-          className={`overflow-hidden transition-all duration-500 lg:hidden ${
-            mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-          }`}
+         className={`overflow-hidden transition-all duration-500 lg:hidden ${
+           mobileOpen ? 'max-h-[80vh] overflow-y-auto opacity-100' : 'max-h-0 opacity-0'
+              }`}
         >
           <ul className="mx-auto max-w-8xl space-y-1 px-5 pb-3.5 pt-3 sm:px-8">
             {LINKS.map((l) => (
