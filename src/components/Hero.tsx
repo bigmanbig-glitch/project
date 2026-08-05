@@ -25,7 +25,7 @@ export function Hero() {
       {/* Large decorative saffron mark */}
       <SaffronBloom className="pointer-events-none absolute -right-24 top-1/2 hidden h-[640px] w-[640px] -translate-y-1/2 opacity-25 lg:block" />
 
-      <div className="relative mx-auto flex min-h-[600px] max-w-8xl flex-col items-center justify-center px-5 pt-24 pb-14 text-center sm:px-8">
+      <div className="relative mx-auto flex min-h-screen max-w-8xl flex-col items-center justify-center px-5 pt-24 pb-14 text-center sm:px-8">
         <div className="animate-fade-up flex items-center gap-2 rounded-full border border-saffron-500/30 bg-espresso-800/40 px-5 py-2 backdrop-blur">
           <Sparkles className="h-4 w-4 text-saffron-400" />
           <span className="text-xs uppercase tracking-[0.3em] text-cream-200">

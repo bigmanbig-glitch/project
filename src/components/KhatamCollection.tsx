@@ -73,7 +73,8 @@ function SubCollection({ collection }: { collection: typeof KHATAM_COLLECTIONS[n
       <div
         ref={scrollerRef}
         onScroll={updateArrows}
-      className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [touch-action:pan-x_pan-y] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden scroll-smooth [touch-action:pan-x] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      >
         {collection.khatams.map((khatam, i) => (
           <div
             key={khatam.id}

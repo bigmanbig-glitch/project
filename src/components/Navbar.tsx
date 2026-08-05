@@ -1,50 +1,27 @@
-import { useEffect, useRef, useState } from 'react';
-import { Menu, ShoppingBag, X, ChevronDown } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Menu, ShoppingBag, X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 const LINKS = [
   { label: 'Heritage', href: '#heritage' },
-  { label: 'Collections', href: '#collections' },
+  { label: 'Saffron', href: '#saffron' },
+  { label: 'Confectionery', href: '#confectionery' },
+  { label: 'Rugs', href: '#rugs' },
   { label: 'Checkout', href: '#checkout' },
   { label: 'Contact', href: '#contact' },
-];
-const COLLECTIONS = [
-  { label: 'Saffron', href: '#saffron' },
-  { label: 'Rugs', href: '#rugs' },
-  { label: 'Persian Tapestry', href: '#tablo-farsh' },
-  { label: 'Khatamkari', href: '#khatamkari' },
-  { label: 'Minakari', href: '#minakari' },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [collectionsOpen, setCollectionsOpen] = useState(false);
-  const collectionsRef = useRef<HTMLLIElement>(null);
   const { count, open } = useCart();
 
- useEffect(() => {
-  const onScroll = () => setScrolled(window.scrollY > 24);
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      collectionsRef.current &&
-      !collectionsRef.current.contains(event.target as Node)
-    ) {
-      setCollectionsOpen(false);
-    }
-  };
-
-  onScroll();
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  document.addEventListener('mousedown', handleClickOutside);
-
-  return () => {
-    window.removeEventListener('scroll', onScroll);
-    document.removeEventListener('mousedown', handleClickOutside);
-  };
-}, []);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <>
@@ -70,59 +47,24 @@ export function Navbar() {
             </span>
           </a>
 
-     <ul className="hidden items-center gap-5 lg:flex -translate-x-16">
-  {LINKS.map((l) =>
-    l.label === 'Collections' ? (
-  <li ref={collectionsRef} key={l.href} className="relative">
-     <button
-  onClick={() => setCollectionsOpen((v) => !v)}
-  className="group relative flex items-center gap-1 text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
->
-  <span className="flex items-center gap-1">
-    Collections
-    <ChevronDown
-      className={`h-4 w-4 transition-transform duration-300 ${
-        collectionsOpen ? 'rotate-180' : ''
-      }`}
-    />
-  </span>
-
-  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
-</button>
-
-        {collectionsOpen && (
-          <div className="absolute left-0 top-full mt-4 w-56 rounded-xl border border-saffron-500/20 bg-espresso-900/95 p-2 shadow-xl backdrop-blur-xl">
-            {COLLECTIONS.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="block rounded-lg px-4 py-2 text-sm text-cream-200 transition-colors hover:bg-espresso-800 hover:text-saffron-300"
-                onClick={() => setCollectionsOpen(false)}
-              >
-                {item.label}
-              </a>
+          <ul className="hidden items-center gap-5 lg:flex">
+            {LINKS.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="group relative text-sm font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300"
+                >
+                  {l.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
+                </a>
+              </li>
             ))}
-          </div>
-        )}
-      </li>
-    ) : (
-      <li key={l.href}>
-        <a
-          href={l.href}
-          className="group relative text-xs font-medium tracking-wide text-cream-200 transition-colors hover:text-saffron-300 xl:text-sm"
-        >
-          {l.label}
-          <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
-        </a>
-      </li>
-    )
-  )}
-</ul>
+          </ul>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <button
               onClick={open}
-             className="group relative flex items-center gap-2 rounded-full border border-saffron-500/30 bg-espresso-800/40 px-3 py-2 text-sm font-medium text-cream-100 transition-all hover:border-saffron-400/60 hover:bg-espresso-700/60 sm:px-4"
+             className="group relative flex items-center gap-2 rounded-full border border-saffron-border-saffron-500/30 bg-espresso-800/40 px-3 py-2 text-sm font-medium text-cream-100 transition-all hover:border-saffron-400/60 hover:bg-espresso-700/60 sm:px-4"
               aria-label={`Open cart, ${count} items`}
             >
              <ShoppingBag className="h-4 w-4 text-saffron-400" />
@@ -145,9 +87,9 @@ export function Navbar() {
 
         {/* Mobile menu */}
         <div
-         className={`overflow-hidden transition-all duration-500 lg:hidden ${
-           mobileOpen ? 'max-h-[80vh] overflow-y-auto opacity-100' : 'max-h-0 opacity-0'
-              }`}
+          className={`overflow-hidden transition-all duration-500 lg:hidden ${
+            mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
         >
           <ul className="mx-auto max-w-8xl space-y-1 px-5 pb-3.5 pt-3 sm:px-8">
             {LINKS.map((l) => (
