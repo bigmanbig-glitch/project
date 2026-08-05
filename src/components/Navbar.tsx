@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, ShoppingBag, X } from 'lucide-react';
+import { Menu, ShoppingBag, X, ChevronDown } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 const LINKS = [
