@@ -1,4 +1,4 @@
-export type ProductCategory = 'saffron' | 'confectionery' | 'rugs' | 'khatamkari';
+export type ProductCategory = 'saffron' | 'confectionery' | 'rugs' | 'khatamkari' | 'minakari';
 
 export interface Product {
   id: string;
