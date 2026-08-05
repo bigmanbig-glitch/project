@@ -11,8 +11,7 @@ const LINKS = [
 const COLLECTIONS = [
   { label: 'Saffron', href: '#saffron' },
   { label: 'Rugs', href: '#rugs' },
-  { label: 'Persian Tapestry', href: '#tapestry' },
-  { label: 'Tablo Farsh', href: '#tablo-farsh' },
+  { label: 'Persian Tapestry', href: '#tablo-farsh' },
   { label: 'Khatamkari', href: '#khatamkari' },
   { label: 'Minakari', href: '#minakari' },
 ];
