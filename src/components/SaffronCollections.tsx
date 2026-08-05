@@ -50,7 +50,7 @@ export function SaffronCollections() {
       <div className="absolute inset-0 bg-gradient-to-b from-espresso-950 via-espresso-900 to-espresso-950" />
 
       <div className="relative mx-auto max-w-8xl px-5 sm:px-8">
-       <div className={`reveal ${isVisible ? 'is-visible' : ''} mx-auto max-w-3xl text-center`}>
+       <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs uppercase tracking-[0.32em] text-saffron-400">The Golden Spice</p>
           <h2 className="mt-3 font-serif text-4xl leading-tight text-cream-50 sm:text-6xl">
             Premium Persian <span className="text-gold-gradient">Saffron</span>
